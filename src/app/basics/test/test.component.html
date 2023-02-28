@@ -1,0 +1,12 @@
+<div class="container">
+
+    <div [ngSwitch]="day">
+        <h3 *ngSwitchCase="1" [ngStyle]="{'color':'red'}">Its Monday Sale</h3>
+        <h3 *ngSwitchCase="2" [ngStyle]="{'color':'red'}">Tuesday</h3>
+        <h3 *ngSwitchCase="3" [ngStyle]="{'color':'blue'}">Wednesday</h3>
+        <h3 *ngSwitchCase="4" [ngStyle]="{'color':'red'}">Thurssday</h3>
+        <h3 *ngSwitchCase="5" [ngStyle]="{'color':'red'}">Friday</h3>
+        <h3 *ngSwitchCase="6" [ngStyle]="{'color':'red'}">Saturday</h3>
+        <h3 *ngSwitchCase="7" [ngStyle]="{'color':'red'}">Sunday</h3>        
+    </div>
+</div>

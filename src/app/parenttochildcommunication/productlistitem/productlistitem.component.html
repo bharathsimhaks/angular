@@ -1,0 +1,23 @@
+
+
+            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                <h4>{{productobj.title}}</h4>
+           
+                <span class="align-middle">
+                    <img [src]="productobj.imagepath" alt="{{productobj.title}}" class="img-fluid">
+                </span>
+
+                <div *ngIf="productobj.comments.length==0; else comments">
+                    <p>No Comments</p>
+                </div>
+
+                <ng-template #comments>
+                      <h2>Comments</h2>
+                      <hr>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let commentelement of productobj.comments">{{commentelement}}</li>
+                      </ul>
+                </ng-template>
+
+            </div>
+        

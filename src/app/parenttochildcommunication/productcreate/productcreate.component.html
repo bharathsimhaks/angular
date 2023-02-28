@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <form #productForm="ngForm" (ngSubmit)="onAddNewProduct(productForm)">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" ngModel name="title"
+             required  #title="ngModel">
+             <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+                Title is required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" ngModel name="description" 
+            required #description="ngModel">
+            <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+                Description is required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="imagepath" class="form-label">ImagePath</label>
+            <input type="text" class="form-control" ngModel name="imagepath" 
+            required #imagepath="ngModel">
+            <div class="alert alert-danger" *ngIf="imagepath.touched && imagepath.invalid">
+                Imagepath is required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" ngModel name="quantity" 
+            required #quantity="ngModel" >
+            <div class="alert alert-danger" *ngIf="quantity.touched && quantity.invalid">
+                Quantity is required
+            </div>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary" [disabled]="productForm.form.invalid">Add Product</button>
+        </div>
+    </form>
+    </div>
+</div>
